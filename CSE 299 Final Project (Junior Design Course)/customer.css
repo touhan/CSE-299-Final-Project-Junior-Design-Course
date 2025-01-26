@@ -1,0 +1,167 @@
+/* General Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+/* Ensure navbar-toggler is always visible */
+.navbar-toggler {
+    display: block !important; /* Override Bootstrap's hiding behavior */
+}
+
+/* Optional: Adjust the alignment of the button for large screens */
+.navbar-toggler {
+    float: right; /* Keeps the button aligned to the right */
+    margin-left: auto; /* Adds spacing between the brand and the toggler */
+}
+
+/* Glass Effect for the Form */
+.feedback-item, .comment-item {
+    background: rgba(255, 255, 255, 0.1); /* White with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px); /* Adding blur effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-item:hover, .comment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Glass Effect for the Navigation Bar (Black Glass Effect) */
+.navbar {
+    background: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    backdrop-filter: blur(15px); /* Adding blur effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Bar Hover Effects */
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Feedback Input Field */
+.feedback-input, .comment-input {
+    resize: vertical;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    backdrop-filter: blur(5px); /* Adding blur effect */
+}
+
+.feedback-input:focus, .comment-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Image Styling */
+.feedback-image, .comment-image {
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.feedback-image:hover, .comment-image:hover {
+    transform: scale(1.05);
+}
+
+/* Image Preview */
+.uploaded-image-preview {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.uploaded-image-preview.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Alert Box Styling */
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    max-width: 90%;
+    width: 400px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.alert-success {
+    background-color: #c6efce;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f5c6cb;
+    color: #721c24;
+}
+
+.alert-info {
+    background-color: #bee5eb;
+    color: #0c5460;
+}
+
+/* Button Styles */
+.btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Input Focused State */
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Adding Animation to the Feedback Form Submit Button */
+.btn-primary {
+    animation: pulse 1.5s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

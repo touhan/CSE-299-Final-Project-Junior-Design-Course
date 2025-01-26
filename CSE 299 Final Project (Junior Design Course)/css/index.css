@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-image: linear-gradient(135deg, #06063d, rgba(136, 18, 73, 0)); /* Deep purple to vibrant red gradient */
+    transition: background-color 0.4s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url('hotalz.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0;
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3), 0 12px 12px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    max-width: 900px;
+    min-height: 550px;
+    position: relative;
+    margin-top: 100px;
+    backdrop-filter: blur(12px); 
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #e94560;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.nav-tabs .nav-link {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #e94560;
+}
+
+.top-bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ff6363;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly more opaque glass effect */
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); 
+}
+
+h1 {
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin: 20px 0 30px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.4); /* More prominent glass effect */
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    backdrop-filter: blur(8px); /* Adds more blur to input fields */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+    box-shadow: 0 0 10px #e94560;
+}
+
+button {
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ff6363;
+    box-shadow: 0 5px 10px rgba(255, 99, 99, 0.3);
+}
+
+/* Updated form-container transition for smooth slide and opacity effect */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Smooth transition for right panel active state */
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.726), #110101); /* Bolder red gradient */
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    animation: slideIn 1s ease-in-out;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    padding: 0 40px;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-200%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

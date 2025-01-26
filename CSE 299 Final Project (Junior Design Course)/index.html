@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <!-- JS links -->
+    <script src="js/bootstrap.js" defer></script>
+    <script src="js/sweetalert.js" defer></script>
+    <script src="js/index.js" defer></script>
+    <!-- Customer feedback start -->
+    <script src="js/customer.js" defer></script>
+    <!-- Customer feedback end -->
+    <title>HomePage</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
+        <div class="container-fluid">
+            <img src="Images/Gold Luxury Initial Logo.png" class="rounded-circle" width="60" alt="">
+            <a href="#" class="mx-4 text-white navbar-brand">HomePage</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MENU">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="MENU">
+                <ul class="navbar-nav w-100 justify-content-end">
+                    <li class="nav-item fw-bold text-white">BLUE WAVE</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <!-- Admin/Hotel Staff Section -->
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#signup" class="nav-link active" data-bs-toggle="tab">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link" data-bs-toggle="tab">Log In</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Admin/Hotel Staff Signup Form -->
+                    <div class="tab-pane container mt-3 active" id="signup">
+                        <img src="Images/sign-up.jpg" class="w-25" alt="">
+                        <form class="reg-form">
+                            <input name="fullname" type="text" placeholder="Full Name" class="mb-3 form-control">
+                            <input name="hotelName" type="text" placeholder="Hotel Name" class="mb-3 form-control">
+                            <input name="totalRoom" type="number" placeholder="Number of Rooms" class="mb-3 form-control">
+                            <input name="mobile" type="number" placeholder="Phone Number" class="mb-3 form-control">
+                            <input name="email" type="email" placeholder="Email" class="mb-3 form-control">
+                            <input name="password" type="password" placeholder="Password" class="mb-3 form-control">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
+                    </div>
+                    <!-- Admin/Hotel Staff Login Form -->
+                    <div class="tab-pane container mt-3" id="login">
+                        <form class="login-form">
+                            <input type="email" placeholder="Email" class="mb-3 form-control">
+                            <input type="password" placeholder="Password" class="mb-3 form-control">
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Section (updated in HomePage) -->
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="#customer-signup" class="nav-link active" data-bs-toggle="tab">Customer Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#customer-login" class="nav-link" data-bs-toggle="tab">Customer Log In</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Customer Signup Form -->
+                    <div class="tab-pane container mt-3 active" id="customer-signup">
+                        <form class="customer-signup-form">
+                            <input name="customerFullName" type="text" placeholder="Full Name" class="mb-3 form-control">
+                            <input name="customerEmail" type="email" placeholder="Email" class="mb-3 form-control">
+                            <input name="customerPassword" type="password" placeholder="Password" class="mb-3 form-control">
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
+                    </div>
+                    <!-- Customer Login Form (Your added code) -->
+                    <div class="tab-pane container mt-3" id="customer-login">
+                        <form id="customer-login-form" class="customer-login-form">
+                            <input type="email" placeholder="Customer Email" class="mb-3 form-control">
+                            <input type="password" placeholder="Password" class="mb-3 form-control">
+                            <button type="submit" class="btn btn-primary w-100">Customer Log in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay with Toggle Buttons -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <button class="sign-in-btn ghost">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <button class="sign-up-btn">CHANGE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
